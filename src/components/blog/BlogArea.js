@@ -14,7 +14,7 @@ export default function BlogArea() {
                     src="img/blog/single_blog_1.png"
                     alt=""
                   />
-                  <a href="#" class="blog_item_date">
+                  <a href="/" class="blog_item_date">
                     <h3>15</h3>
                     <p>Jan</p>
                   </a>
@@ -31,12 +31,12 @@ export default function BlogArea() {
                   </p>
                   <ul class="blog-info-link">
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <i class="fa fa-user"></i> Travel, Lifestyle
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <i class="fa fa-comments"></i> 03 Comments
                       </a>
                     </li>
@@ -51,7 +51,7 @@ export default function BlogArea() {
                     src="img/blog/single_blog_2.png"
                     alt=""
                   />
-                  <a href="#" class="blog_item_date">
+                  <a href="/" class="blog_item_date">
                     <h3>15</h3>
                     <p>Jan</p>
                   </a>
@@ -68,12 +68,12 @@ export default function BlogArea() {
                   </p>
                   <ul class="blog-info-link">
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <i class="fa fa-user"></i> Travel, Lifestyle
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <i class="fa fa-comments"></i> 03 Comments
                       </a>
                     </li>
@@ -88,7 +88,7 @@ export default function BlogArea() {
                     src="img/blog/single_blog_3.png"
                     alt=""
                   />
-                  <a href="#" class="blog_item_date">
+                  <a href="/" class="blog_item_date">
                     <h3>15</h3>
                     <p>Jan</p>
                   </a>
@@ -105,12 +105,12 @@ export default function BlogArea() {
                   </p>
                   <ul class="blog-info-link">
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <i class="fa fa-user"></i> Travel, Lifestyle
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <i class="fa fa-comments"></i> 03 Comments
                       </a>
                     </li>
@@ -125,7 +125,7 @@ export default function BlogArea() {
                     src="img/blog/single_blog_4.png"
                     alt=""
                   />
-                  <a href="#" class="blog_item_date">
+                  <a href="/" class="blog_item_date">
                     <h3>15</h3>
                     <p>Jan</p>
                   </a>
@@ -142,12 +142,12 @@ export default function BlogArea() {
                   </p>
                   <ul class="blog-info-link">
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <i class="fa fa-user"></i> Travel, Lifestyle
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <i class="fa fa-comments"></i> 03 Comments
                       </a>
                     </li>
@@ -162,7 +162,7 @@ export default function BlogArea() {
                     src="img/blog/single_blog_5.png"
                     alt=""
                   />
-                  <a href="#" class="blog_item_date">
+                  <a href="/" class="blog_item_date">
                     <h3>15</h3>
                     <p>Jan</p>
                   </a>
@@ -179,12 +179,12 @@ export default function BlogArea() {
                   </p>
                   <ul class="blog-info-link">
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <i class="fa fa-user"></i> Travel, Lifestyle
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <i class="fa fa-comments"></i> 03 Comments
                       </a>
                     </li>
@@ -195,22 +195,22 @@ export default function BlogArea() {
               <nav class="blog-pagination justify-content-center d-flex">
                 <ul class="pagination">
                   <li class="page-item">
-                    <a href="#" class="page-link" aria-label="Previous">
+                    <a href="/" class="page-link" aria-label="Previous">
                       <i class="ti-angle-left"></i>
                     </a>
                   </li>
                   <li class="page-item">
-                    <a href="#" class="page-link">
+                    <a href="/" class="page-link">
                       1
                     </a>
                   </li>
                   <li class="page-item active">
-                    <a href="#" class="page-link">
+                    <a href="/" class="page-link">
                       2
                     </a>
                   </li>
                   <li class="page-item">
-                    <a href="#" class="page-link" aria-label="Next">
+                    <a href="/" class="page-link" aria-label="Next">
                       <i class="ti-angle-right"></i>
                     </a>
                   </li>
@@ -251,37 +251,37 @@ export default function BlogArea() {
                 <h4 class="widget_title">Category</h4>
                 <ul class="list cat-list">
                   <li>
-                    <a href="#" class="d-flex">
+                    <a href="/" class="d-flex">
                       <p>Resaurant food</p>
                       <p>(37)</p>
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="d-flex">
+                    <a href="/" class="d-flex">
                       <p>Travel news</p>
                       <p>(10)</p>
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="d-flex">
+                    <a href="/" class="d-flex">
                       <p>Modern technology</p>
                       <p>(03)</p>
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="d-flex">
+                    <a href="/" class="d-flex">
                       <p>Product</p>
                       <p>(11)</p>
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="d-flex">
+                    <a href="/" class="d-flex">
                       <p>Inspiration</p>
                       <p>21</p>
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="d-flex">
+                    <a href="/" class="d-flex">
                       <p>Health Care (21)</p>
                       <p>09</p>
                     </a>
@@ -332,28 +332,28 @@ export default function BlogArea() {
                 <h4 class="widget_title">Tag Clouds</h4>
                 <ul class="list">
                   <li>
-                    <a href="#">project</a>
+                    <a href="/">project</a>
                   </li>
                   <li>
-                    <a href="#">love</a>
+                    <a href="/">love</a>
                   </li>
                   <li>
-                    <a href="#">technology</a>
+                    <a href="/">technology</a>
                   </li>
                   <li>
-                    <a href="#">travel</a>
+                    <a href="/">travel</a>
                   </li>
                   <li>
-                    <a href="#">restaurant</a>
+                    <a href="/">restaurant</a>
                   </li>
                   <li>
-                    <a href="#">life style</a>
+                    <a href="/">life style</a>
                   </li>
                   <li>
-                    <a href="#">design</a>
+                    <a href="/">design</a>
                   </li>
                   <li>
-                    <a href="#">illustration</a>
+                    <a href="/">illustration</a>
                   </li>
                 </ul>
               </aside>
@@ -362,32 +362,32 @@ export default function BlogArea() {
                 <h4 class="widget_title">Instagram Feeds</h4>
                 <ul class="instagram_row flex-wrap">
                   <li>
-                    <a href="#">
+                    <a href="/">
                       <img class="img-fluid" src="img/post/post_5.png" alt="" />
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="/">
                       <img class="img-fluid" src="img/post/post_6.png" alt="" />
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="/">
                       <img class="img-fluid" src="img/post/post_7.png" alt="" />
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="/">
                       <img class="img-fluid" src="img/post/post_8.png" alt="" />
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="/">
                       <img class="img-fluid" src="img/post/post_9.png" alt="" />
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="/">
                       <img
                         class="img-fluid"
                         src="img/post/post_10.png"

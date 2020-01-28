@@ -9,42 +9,42 @@ export default function Footer() {
               <div className="col-xl-3 col-md-6 col-lg-3 ">
                 <div className="footer_widget">
                   <div className="footer_logo">
-                    <a href="#">
+                    <a href="/">
                       <img src="img/footer_logo.png" alt="" />
                     </a>
                   </div>
                   <p>
                     Ngõ 48 Đường Lê Trọng Tấn <br /> Dương Nội, Hà Đông, Hà Nội
                     <br />
-                    <a href="#">+84904237071</a>
+                    <a href="/">+84904237071</a>
                     <br />
-                    <a href="#">Codatduoc@gmail.com</a>
+                    <a href="/">Codatduoc@gmail.com</a>
                   </p>
                   <p></p>
                   <div className="socail_links">
                     <ul>
                       <li>
-                        <a href="#">
+                        <a href="/">
                           <i className="ti-facebook"></i>
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="/">
                           <i className="ti-twitter-alt"></i>
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="/">
                           <i className="fa fa-instagram"></i>
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="/">
                           <i className="fa fa-pinterest"></i>
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="/">
                           <i className="fa fa-youtube-play"></i>
                         </a>
                       </li>
@@ -57,13 +57,13 @@ export default function Footer() {
                   <h3 className="footer_title">Lẩu nướng Quang Luyến quán</h3>
                   <ul>
                     <li>
-                      <a href="#">Thực đơn</a>
+                      <a href="/">Thực đơn</a>
                     </li>
                     <li>
-                      <a href="#">Giới thiệu</a>
+                      <a href="/">Giới thiệu</a>
                     </li>
                     <li>
-                      <a href="#"> Khuyến mãi</a>
+                      <a href="/"> Khuyến mãi</a>
                     </li>
                   </ul>
                 </div>
@@ -93,7 +93,7 @@ export default function Footer() {
                   <script>document.write(new Date().getFullYear());</script>2020
                   Lẩu nướng Quang Luyến | Website được tạo {' '}
                   <i className="fa fa-heart-o" aria-hidden="true"></i> bởi{' '}
-                  <a href="https://colorlib.com" target="_blank">
+                  <a href="https://colorlib.com" >
                    Bùi Quang Huy
                   </a>
                 </p>

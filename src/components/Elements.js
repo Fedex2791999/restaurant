@@ -1,5 +1,4 @@
 import React  from 'react';
-import TextAreaElement from '../components/elements/TextAreaElement'
 import BradcamElement from '../components/elements/BradcamElement'
 import AlignAreaElement from '../components/elements/AlignAreaElement'
 

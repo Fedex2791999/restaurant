@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Home from './components/Home';
 import axios from 'axios';
 export default function App() {
@@ -7,10 +7,9 @@ export default function App() {
     .then(res => {
       const data = res.data;
       console.log(data);
-      console.log("Được rồi nhá");
-      
+      console.log('Được rồi nhá');
     })
-    .catch(error => console.log("Đéo được rồi"));
+    .catch(error => console.log('Đéo được rồi'));
   return (
     <div>
       <Home />

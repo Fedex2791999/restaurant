@@ -11,7 +11,7 @@ import DeliciousArea from './DeliciousArea';
 import Feedback from './Feedback';
 import ReservationArea from './ReservationArea';
 import Footer from './Footer';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import {  Switch, Route } from 'react-router-dom';
 export default function Home() {
     return (
       <div>

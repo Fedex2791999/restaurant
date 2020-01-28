@@ -38,19 +38,19 @@ export default function Feedback() {
                       <div className="name">
                         <h3>Em Linh</h3>
                         <div className="icon">
-                          <a>
+                          <a href ="/">
                             <i className="fa fa-star"></i>{' '}
                           </a>
-                          <a>
+                          <a href ="/">
                             <i className="fa fa-star"></i>{' '}
                           </a>
-                          <a>
+                          <a href ="/">
                             <i className="fa fa-star"></i>{' '}
                           </a>
-                          <a>
+                          <a href ="/">
                             <i className="fa fa-star"></i>{' '}
                           </a>
-                          <a>
+                          <a href ="/">
                             <i className="fa fa-star"></i>{' '}
                           </a>
                         </div>
@@ -73,19 +73,19 @@ export default function Feedback() {
                       <div className="name">
                         <h3>Anh Hùng</h3>
                         <div className="icon">
-                          <a>
+                          <a href ="/">
                             <i className="fa fa-star"></i>{' '}
                           </a>
-                          <a>
+                          <a href ="/">
                             <i className="fa fa-star"></i>{' '}
                           </a>
-                          <a>
+                          <a href ="/">
                             <i className="fa fa-star"></i>{' '}
                           </a>
-                          <a>
+                          <a href ="/">
                             <i className="fa fa-star"></i>{' '}
                           </a>
-                          <a>
+                          <a href ="/">
                             <i className="fa fa-star"></i>{' '}
                           </a>
                         </div>
