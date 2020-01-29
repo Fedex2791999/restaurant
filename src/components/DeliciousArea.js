@@ -1,6 +1,18 @@
-import React from 'react';
+import React,{useState} from 'react';
 import SingleFood from './food/SingleFood';
+import axios from 'axios'
 export default function DeliciousArea() {
+  const [test,setTest] = useState('')
+  axios
+  .get(' /test')
+  .then(res => {
+    const data = res.data;
+    console.log(data);
+     setTest(data[0].first_name)
+    console.log('Được rồi nhá');
+  })
+  .catch(error => console.log('Đéo được rồi'));
+
   return (
     <div className="Delicious_area">
       <div className="container">
