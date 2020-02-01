@@ -4,12 +4,12 @@ import 'react-fancybox/lib/fancybox.css';
 export default function ModalImage(props) {
   return (
     <div>
-      <div className="thumb" >
+      <div className="thumb">
         <ReactFancyBox
-          thumbnail="img/delicious/1.png"
+          thumbnail={`img/${props.type}/${props.image}`}
           width="50px"
           height="50px"
-          image="img/delicious/test.jpg"
+          // image= {image}
         />
       </div>
     </div>

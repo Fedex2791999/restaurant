@@ -1,13 +1,15 @@
 import React from 'react';
 import ModalImage from '../modal/ModalImage';
-export default function SingleFood() {
+export default function SingleFood(props) {
   return (
     <div className="single_delicious d-flex align-items-center">
-      <ModalImage/>
+      <ModalImage image={props.item.image} type = {props.type} />
       <div className="info">
-        <h3>1.Thịt Bò</h3>
-        <p>Thịt tươi ngon bao gồm ba chỉ và bắp bò.</p>
-        <span>20.000VND</span>
+        <h3>
+          {props.index + 1}.{props.item.name}
+        </h3>
+        <p>{props.item.content}</p>
+        <span>{props.item.cost}.000VND</span>
       </div>
     </div>
   );
