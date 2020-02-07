@@ -2,6 +2,14 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 export default function Menu() {
+  const style_logo = {
+    color: 'white',
+    display: 'inline',
+    fontWeight: '500',
+    fontStyle: 'italic',
+    marginLeft: '20px',
+    fontSize: '25px'
+  }
   return (
     <div>
       <div className="header-area ">
@@ -12,7 +20,10 @@ export default function Menu() {
                 <div className="col-xl-3 col-lg-2">
                   <div className="logo">
                     <Link to="/">
-                      <img src="img/logo.png" alt="" />
+                      <img src="img/logo.png" alt="" />{' '}
+                      <h1 style={style_logo}>
+                      Quang Luyến Quán
+                      </h1>
                     </Link>
                   </div>
                 </div>

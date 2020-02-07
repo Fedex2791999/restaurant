@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import KindOfFood from '../components/food/KindOfFood';
+import BradcamFood from '../components/food/BradcamFood';
 import TabFood from '../components/food/TabFood';
+
 import axios from 'axios';
 
 export default function DeliciousArea() {
@@ -14,7 +16,7 @@ export default function DeliciousArea() {
     {
       name: 'Lẩu',
       icon: 'flaticon-lunch',
-      ariaSelected: 'false',
+      ariaSelected: 'true',
       ariaControls: 'pills-home',
       href: '#pills-home',
       id: 'pills-home-tab'
@@ -41,23 +43,25 @@ export default function DeliciousArea() {
       id: 'pills-home',
       ariaLabelledby: 'pills-home-tab',
       listItem: listHotPot,
-      type: 'hotpot'
-    },
-    {
-      id: 'pills-profile',
-      ariaLabelledby: 'pills-profile-tab',
-      listItem: listDessert,
-      type: 'dessert'
+      type: 'hotpot',
+      active: 'true'
     },
     {
       id: 'pills-contact',
       ariaLabelledby: 'pills-contact-tab',
       listItem: listGrill,
-      type: 'grill'
+      type: 'grill',
+      active: 'false'
+    },
+    {
+      id: 'pills-profile',
+      ariaLabelledby: 'pills-profile-tab',
+      listItem: listDessert,
+      type: 'dessert',
+      active: 'false'
     }
   ];
 
- 
   useEffect(() => {
     axios.get(' /hotpot').then(res => {
       const data = res.data;
@@ -77,17 +81,13 @@ export default function DeliciousArea() {
         setListDessert(data);
       })
       .catch(err => console.log('Hỏng rồi'));
-  },[]);
+  }, []);
 
   return (
     <div className="Delicious_area">
       <div className="container">
         <div className="row">
-          <div className="col-xl-12">
-            <div className="section_title text-center mb-50">
-              <h3>Thực Đơn </h3>
-            </div>
-          </div>
+          <BradcamFood />
         </div>
         <div className="tablist_menu">
           <div className="row">

@@ -4,7 +4,7 @@ export default function TabFood(props) {
 
   return (
     <div
-      className="tab-pane fade "
+      className={props.item.active === "true"? "tab-pane fade active show " : "tab-pane fade"}
       id={props.item.id}
       role="tabpanel"
       aria-labelledby={props.item.ariaLabelledby}

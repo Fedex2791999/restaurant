@@ -1,5 +1,5 @@
 import React  from 'react';
-
+import {Link} from 'react-router-dom'
 export default function Footer() {
     return (
       <div className="footer">
@@ -9,42 +9,42 @@ export default function Footer() {
               <div className="col-xl-3 col-md-6 col-lg-3 ">
                 <div className="footer_widget">
                   <div className="footer_logo">
-                    <a href="/">
+                     <Link to="/">
                       <img src="img/footer_logo.png" alt="" />
-                    </a>
+                    </Link>
                   </div>
                   <p>
                     Ngõ 48 Đường Lê Trọng Tấn <br /> Dương Nội, Hà Đông, Hà Nội
                     <br />
-                    <a href="/">+84904237071</a>
+                     <Link to="/">+84904237071</Link>
                     <br />
-                    <a href="/">Codatduoc@gmail.com</a>
+                     <Link to="/">Codatduoc@gmail.com</Link>
                   </p>
                   <p></p>
                   <div className="socail_links">
                     <ul>
                       <li>
-                        <a href="/">
+                         <a href="https://www.facebook.com/bui.q.huy.12">
                           <i className="ti-facebook"></i>
                         </a>
                       </li>
                       <li>
-                        <a href="/">
+                         <a href="https://twitter.com/BiQuang49230790">
                           <i className="ti-twitter-alt"></i>
                         </a>
                       </li>
                       <li>
-                        <a href="/">
+                         <a href="https://www.instagram.com/richard_cowell1231/">
                           <i className="fa fa-instagram"></i>
                         </a>
                       </li>
                       <li>
-                        <a href="/">
-                          <i className="fa fa-pinterest"></i>
+                         <a href="https://github.com/Fedex2791999">
+                         <i class="fa fa-github"></i>
                         </a>
                       </li>
                       <li>
-                        <a href="/">
+                         <a href="https://www.youtube.com/channel/UCH-AwBJBg4Rzdlaj6jDabSg?view_as=subscriber">
                           <i className="fa fa-youtube-play"></i>
                         </a>
                       </li>
@@ -57,13 +57,13 @@ export default function Footer() {
                   <h3 className="footer_title">Lẩu nướng Quang Luyến quán</h3>
                   <ul>
                     <li>
-                      <a href="/">Thực đơn</a>
+                       <Link to="/menu">Thực đơn</Link>
                     </li>
                     <li>
-                      <a href="/">Giới thiệu</a>
+                       <Link to="/about">Giới thiệu</Link>
                     </li>
                     <li>
-                      <a href="/"> Khuyến mãi</a>
+                       <Link to="/contact"> Liên hệ</Link>
                     </li>
                   </ul>
                 </div>
@@ -93,9 +93,9 @@ export default function Footer() {
                   <script>document.write(new Date().getFullYear());</script>2020
                   Lẩu nướng Quang Luyến | Website được tạo {' '}
                   <i className="fa fa-heart-o" aria-hidden="true"></i> bởi{' '}
-                  <a href="https://colorlib.com" >
+                  <Link to="https://colorlib.com" >
                    Bùi Quang Huy
-                  </a>
+                  </Link>
                 </p>
               </div>
             </div>

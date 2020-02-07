@@ -2712,11 +2712,16 @@ h3 {
   font-family: "Poppins", sans-serif;
 }
 
+
 /* line 32, ../../Arafath/CL/Cl November/225. Restaurant-02/HTML/scss/_delicious.scss */
 .Delicious_area .tablist_menu .nav li a.active {
   position: relative;
 }
-
+.Delicious_area .tablist_menu .nav li a:hover{
+  /* border-bottom: 2px solid #DB9A64 ; */
+  /* background-color:  red; */
+  color:#DB9A64
+}
 /* line 36, ../../Arafath/CL/Cl November/225. Restaurant-02/HTML/scss/_delicious.scss */
 .Delicious_area .tablist_menu .nav li a.active .single_menu .icon i {
   color: #DB9A64;
@@ -2726,7 +2731,9 @@ h3 {
 .Delicious_area .tablist_menu .nav li a.active .single_menu h4 {
   color: #DB9A64;
 }
-
+.Delicious_area .tablist_menu .nav li a:hover{
+  color: #DB9A64;
+}
 /* line 44, ../../Arafath/CL/Cl November/225. Restaurant-02/HTML/scss/_delicious.scss */
 .Delicious_area .tablist_menu .nav li a.active:before {
   position: absolute;
@@ -2766,16 +2773,15 @@ h3 {
 
 /* line 69, ../../Arafath/CL/Cl November/225. Restaurant-02/HTML/scss/_delicious.scss */
 .Delicious_area .single_delicious .thumb {
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
+  border: 3px solid #ddd;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* line 71, ../../Arafath/CL/Cl November/225. Restaurant-02/HTML/scss/_delicious.scss */
-.Delicious_area .single_delicious .thumb img {
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
+.Delicious_area .single_delicious .thumb img:hover {
+ 
+  height: 170px;
+  width:170px
 }
 
 /* line 75, ../../Arafath/CL/Cl November/225. Restaurant-02/HTML/scss/_delicious.scss */
@@ -2802,10 +2808,16 @@ h3 {
 
 /* line 86, ../../Arafath/CL/Cl November/225. Restaurant-02/HTML/scss/_delicious.scss */
 .Delicious_area .single_delicious .info h3 {
-  font-size: 24px;
+  cursor: pointer;
+  font-size: 22px;
   color: #001D38;
-  font-weight: 400;
+  font-weight: 500;
   font-family: "Poppins", sans-serif;
+  margin-bottom: 100px;
+}
+.Delicious_area .single_delicious .info h3:hover{
+  /* border-bottom: 2px solid#DB9A64; */
+  font-size: 24px;
 }
 
 /* line 92, ../../Arafath/CL/Cl November/225. Restaurant-02/HTML/scss/_delicious.scss */
@@ -2820,12 +2832,17 @@ h3 {
 
 /* line 100, ../../Arafath/CL/Cl November/225. Restaurant-02/HTML/scss/_delicious.scss */
 .Delicious_area .single_delicious .info span {
+  position: relative;
   display: block;
   font-weight: 400;
-  font-size: 26px;
+  font-size: 21px;
   color: #DB9A64;
+  bottom: 90px;
+  left:4px;
 }
-
+#pills-tabContent{
+  padding-left: 114px;
+}
 /* line 1, ../../Arafath/CL/Cl November/225. Restaurant-02/HTML/scss/_bradcam.scss */
 .bradcam_bg_1 {
   background-image: url(../img/banner/bradcam.png);

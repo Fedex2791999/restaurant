@@ -1,6 +1,14 @@
-import React  from 'react';
+import React, { useState } from 'react';
 
 export default function ReservationArea() {
+  const [name, setName] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [timeBooking, setTimeBooking] = useState('');
+
+  const mySubmitHandler = event => {
+    event.preventDefault();
+    alert(timeBooking);
+  };
   return (
     <div className="Reservation_area">
       <div className="rev_icon_1 d-none d-md-block">
@@ -34,128 +42,147 @@ export default function ReservationArea() {
               ></iframe> */}
             </div>
           </div>
+
+          {/* Đặt chỗ ngồi */}
           <div className="col-lg-6">
             <div className="book_Form">
               <h3>Đặt chỗ ngồi</h3>
-              <div className="row ">
-                <div className="col-lg-6">
-                  <div className="input_field mb_15">
-                    <input type="text" placeholder="Tên" />
-                  </div>
-                </div>
-                <div className="col-lg-6">
-                  <div className="input_field mb_15">
-                    <input type="text" placeholder="Số điện thoại" />
-                  </div>
-                </div>
-                <div className="col-lg-6">
-                  <div className="input_field">
-                    <div
-                      // role="wrapper"
-                      className="gj-datepicker gj-datepicker-md gj-unselectable"
-                    >
+
+              <form onSubmit={mySubmitHandler}>
+                <div className="row ">
+                  <div className="col-lg-6">
+                    <div className="input_field mb_15">
                       <input
-                        id="datepicker2"
-                        placeholder="Ngày sinh"
-                        data-type="datepicker"
-                        data-guid="aae9d56f-40a5-bf27-e011-337a9102e589"
-                        data-datepicker="true"
-                        className="gj-textbox-md"
-                        // role="input"
+                        type="text"
+                        placeholder="Tên"
+                        onChange={e => setName(e.target.value)}
+                        value={name}
                       />
-                      <span
-                        className="fa fa-calendar-o"
-                        // role="right-icon"
-                      ></span>
                     </div>
                   </div>
-                </div>
-                <div className="col-lg-6">
-                  <div className="input_field">
+                  <div className="col-lg-6">
+                    <div className="input_field mb_15">
+                      <input
+                        type="text"
+                        placeholder="Số điện thoại"
+                        onChange={e => setPhoneNumber(e.target.value)}
+                        value={phoneNumber}
+                      />
+                    </div>
+                  </div>
+                  <div className="col-lg-6">
                     <div className="input_field">
-                      <select className="wide" >
-                        <option data-display="Thời điểm ">Dinner</option>
-                        <option value="1">Dinner</option>
-                        <option value="1">Dinner</option>
+                      <div
+                        // role="wrapper"
+                        className="gj-datepicker gj-datepicker-md gj-unselectable"
+                      >
+                        <input
+                          id="datepicker2"
+                          placeholder="Ngày sinh"
+                          data-type="datepicker"
+                          data-guid="aae9d56f-40a5-bf27-e011-337a9102e589"
+                          data-datepicker="true"
+                          className="gj-textbox-md"
+                          // role="input"
+                        />
+                        <span
+                          className="fa fa-calendar-o"
+                          // role="right-icon"
+                        ></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-lg-6">
+                    <div className="input_field">
+                      <div className="input_field">
+                        <select
+                          className="wide"
+                          onChange={e => setTimeBooking(e.target.value)}
+                          value={timeBooking}
+                        >
+                          <option value="react">React</option>
+                          <option value="angular">Angular</option>
+                          <option value="vue">Vue</option>
+                        </select>
+                        {/* <div className="nice-select wide" tabIndex="0">
+                          <span className="current">Thời Điểm</span>
+                          <ul className="list">
+                            <li
+                              data-value="Sáng"
+                              className="option"
+                            >
+                              Sáng
+                            </li>
+                            <li data-value="Chiều" className="option">
+                              Chiều
+                            </li>
+                            <li data-value="Tối" className="option">
+                              Tối
+                            </li>
+                          </ul>
+                        </div>
+                 */}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-lg-12">
+                    <div className="input_field">
+                      <select className="wide">
+                        <option data-display="Số người">Số người</option>
+                        <option value="1"> 5</option>
+                        <option value="1">10</option>
                       </select>
                       <div className="nice-select wide" tabIndex="0">
-                        <span className="current">Dinner</span>
+                        <span className="current"> Số Người </span>
                         <ul className="list">
                           <li
-                            data-value="Dinner"
-                            data-display="Dinner"
+                            data-value="5"
+                            data-display="5"
                             className="option selected"
                           >
-                            Dinner
+                            5
                           </li>
                           <li data-value="1" className="option">
-                            Dinner
+                            10
                           </li>
                           <li data-value="1" className="option">
-                            Dinner
+                            >15
                           </li>
                         </ul>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="col-lg-12">
-                  <div className="input_field">
-                    <select className="wide" >
-                      <option data-display="Số người">Person</option>
-                      <option value="1">Person</option>
-                      <option value="1">Person</option>
-                    </select>
-                    <div className="nice-select wide" tabIndex="0">
-                      <span className="current">Person</span>
-                      <ul className="list">
-                        <li
-                          data-value="Person"
-                          data-display="Person"
-                          className="option selected"
-                        >
-                          Person
-                        </li>
-                        <li data-value="1" className="option">
-                          Person
-                        </li>
-                        <li data-value="1" className="option">
-                          Person
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-12">
-                  <button className="sumbit_btn" type="submit">
-                    Đặt bàn
-                  </button>
-                </div>
-                <div className="col-lg-6">
-                  <div className="single_add d-flex">
-                    <div className="icon">
-                      <img src="img/svg_icon/address.svg" alt="" />
-                    </div>
-                    <div className="ifno">
-                      <h4>Địa chỉ</h4>
-                      <p>
-                        Ngõ 48 Đường Lê Trọng Tấn, Dương Kinh, Hà Đông, Hà Nội
-                      </p>
-                    </div>
+                  <div className="col-xl-12">
+                    <button className="sumbit_btn" type="submit">
+                      Đặt bàn
+                    </button>
                   </div>
                   <div className="col-lg-6">
                     <div className="single_add d-flex">
                       <div className="icon">
-                        <img src="img/svg_icon/head.svg" alt="" />
+                        <img src="img/svg_icon/address.svg" alt="" />
                       </div>
                       <div className="ifno">
-                        <h4>Reservation</h4>
-                        <p>+10 673 567 367</p>
+                        <h4>Địa chỉ</h4>
+                        <p>
+                          Ngõ 48 Đường Lê Trọng Tấn, Dương Kinh, Hà Đông, Hà Nội
+                        </p>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="single_add d-flex">
+                        <div className="icon">
+                          <img src="img/svg_icon/head.svg" alt="" />
+                        </div>
+                        <div className="ifno">
+                          <h4>Reservation</h4>
+                          <p>+10 673 567 367</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
