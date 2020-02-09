@@ -1,27 +1,40 @@
-import React, { useState } from 'react';
+import React from 'react'
+export default class FlavorForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {value: ''};
 
-export default function FormSelect() {
-  //initial value set to react
-  const [framework, setFramework] = useState('');
-
-  function handleChange(e) {
-    setFramework(e.target.value);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    console.log(framework);
+  handleChange(event) {
+    console.log('onChange');
+    
+    this.setState({value: event.target.value});
   }
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <h2>Choose your framework</h2>
-      <select onChange={handleChange} value={framework}>
-        <option value="react">React</option>
-        <option value="angular">Angular</option>
-        <option value="vue">Vue</option>
-      </select>
-      <button type="submit">Submit</button>
-    </form>
-  );
+  handleSubmit(event) {
+    console.log('handleSubmit');
+    
+    alert('Your favorite flavor is: ' + this.state.value);
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Pick your favorite flavor:
+          <select value={this.state.value} onChange={this.handleChange}>
+            <option value="grapefruit">Grapefruit</option>
+            <option value="lime">Lime</option>
+            <option value="coconut">Coconut</option>
+            <option value="mango">Mango</option>
+          </select>
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+    );
+  }
 }

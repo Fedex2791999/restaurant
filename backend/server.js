@@ -1,41 +1,13 @@
 const express = require('express');
 var mysql = require('mysql');
-// const Nexmo = require('nexmo');
-// send Message
-// const nexmo = new Nexmo({
-//   apiKey: '5ad5bd85',
-//   apiSecret: '7SyajsBVRHI3VfBN'
-// });
-
-// const from = 'Nexmo';
-// const to = '84973405092';
-// const text = 'Mã pass code của bạn là:\n17020795  \n';
-
-// nexmo.message.sendSms(
-//   from,
-//   to,
-//   text,
-//   {
-//     type: 'unicode'
-//   },
-//   (err, responseData) => {
-//     if (err) {
-//       console.log(err);
-//     } else {
-//       if (responseData.messages[0]['status'] === '0') {
-//         console.log('Message sent successfully.');
-//       } else {
-//         console.log(
-//           `Message failed with error: ${responseData.messages[0]['error-text']}`
-//         );
-//       }
-//     }
-//   }
-// );
-
-// end send message
-
+const bodyParser = require('body-parser');
 const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+const accountSid = 'ACd00286cd0a5b2ea7224b9fc9c06a9040';
+const authToken = '2e3e0faebbbde9ee77ba605d07d8be43';
+const client = require('twilio')(accountSid, authToken);
+
 var connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -70,7 +42,22 @@ app.get('/dessert', (req, res) => {
       res.end(JSON.stringify(results));
     }
   );
+
   // connection.end();
+});
+
+app.post('/booking', (req, res) => {
+  console.log(req.body);
+  // const sms = 'Tên tôi là: ' + req.body.name + '\nSố điện thoại là: ' + req.body.phoneNumber;
+  // console.log(sms);
+  // client.messages
+  //   .create({
+  //     body: sms,
+  //     from: '+12028049954',
+  //     to: '+84973405092'
+  //   })
+  //   .then(message => console.log(message.sid));
+  res.end('Đã gửi tin nhắn');
 });
 const port = 5000;
 

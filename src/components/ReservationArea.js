@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
-
+import React from 'react';
+import axios from 'axios';
+import { useForm } from 'react-hook-form';
 export default function ReservationArea() {
-  const [name, setName] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [timeBooking, setTimeBooking] = useState('');
-
-  const mySubmitHandler = event => {
-    event.preventDefault();
-    alert(timeBooking);
+  const { register, handleSubmit, errors } = useForm();
+  const onSubmit = data => {
+    console.log(data);
+    alert('Đặt bàn thành công!');
+  };
+  const style_validate = {
+    color: 'red',
+    marginTop: 5
   };
   return (
     <div className="Reservation_area">
@@ -48,26 +50,63 @@ export default function ReservationArea() {
             <div className="book_Form">
               <h3>Đặt chỗ ngồi</h3>
 
-              <form onSubmit={mySubmitHandler}>
+              <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="row ">
                   <div className="col-lg-6">
                     <div className="input_field mb_15">
                       <input
-                        type="text"
+                        name="firstName"
+                        ref={register({
+                          required: true,
+                          maxLength: 20,
+                          minLength: 10
+                        })}
                         placeholder="Tên"
-                        onChange={e => setName(e.target.value)}
-                        value={name}
                       />
+                      <div style={style_validate}>
+                        {errors.firstName &&
+                          errors.firstName.type === 'required' &&
+                          'Vui lòng nhập vào ô này!'}{' '}
+                      </div>
+                      <div style={style_validate}>
+                        {errors.firstName &&
+                          errors.firstName.type === 'maxLength' &&
+                          'Vui lòng kiểm tra lại tên!'}
+                      </div>
+                      <div style={style_validate}>
+                        {errors.firstName &&
+                          errors.firstName.type === 'minLength' &&
+                          'Vui lòng kiểm tra lại tên!'}
+                      </div>
                     </div>
                   </div>
                   <div className="col-lg-6">
                     <div className="input_field mb_15">
                       <input
-                        type="text"
-                        placeholder="Số điện thoại"
-                        onChange={e => setPhoneNumber(e.target.value)}
-                        value={phoneNumber}
+                        name="phone"
+                        ref={register({
+                          required: true,
+                          maxLength: 11,
+                          minLength: 10
+                        })}
+                        placeholder="Số điện thoại "
+                        type="number"
                       />
+                      <div style={style_validate}>
+                        {errors.phone &&
+                          errors.phone.type === 'required' &&
+                          'Vui lòng nhập vào ô này!'}
+                      </div>
+                      <div style={style_validate}>
+                        {errors.phone &&
+                          errors.phone.type === 'maxLength' &&
+                          'Số điện thoại không hợp lệ!'}
+                      </div>
+                      <div style={style_validate}>
+                        {errors.phone &&
+                          errors.phone.type === 'minLength' &&
+                          'Số điện thoại không hợp lệ!'}
+                      </div>
                     </div>
                   </div>
                   <div className="col-lg-6">
@@ -77,14 +116,15 @@ export default function ReservationArea() {
                         className="gj-datepicker gj-datepicker-md gj-unselectable"
                       >
                         <input
-                          id="datepicker2"
-                          placeholder="Ngày sinh"
-                          data-type="datepicker"
-                          data-guid="aae9d56f-40a5-bf27-e011-337a9102e589"
-                          data-datepicker="true"
-                          className="gj-textbox-md"
-                          // role="input"
+                          name="date"
+                          type="date"
+                          ref={register({ required: true })}
                         />
+                        <div style={{ color: 'red', marginTop: 18, marginBottom: 15 }}>
+                          {errors.date &&
+                            errors.date.type === 'required' &&
+                            'Vui lòng lựa chọn ngày ăn!'}
+                        </div>
                         <span
                           className="fa fa-calendar-o"
                           // role="right-icon"
@@ -95,61 +135,41 @@ export default function ReservationArea() {
                   <div className="col-lg-6">
                     <div className="input_field">
                       <div className="input_field">
-                        <select
-                          className="wide"
-                          onChange={e => setTimeBooking(e.target.value)}
-                          value={timeBooking}
-                        >
-                          <option value="react">React</option>
-                          <option value="angular">Angular</option>
-                          <option value="vue">Vue</option>
+                        <select name="time" ref={register({ required: true })}>
+                          <option value="" disabled selected hidden>
+                            Thời gian sẽ đến?
+                          </option>
+                          <option value="18.00">18.00</option>
+                          <option value="19.00">19.00</option>
+                          <option value="20.00">20.00</option>
+                          <option value="21.00">21.00</option>
+                          <option value="22.00">22.00</option>
+                          <option value="23.00">23.00</option>
                         </select>
-                        {/* <div className="nice-select wide" tabIndex="0">
-                          <span className="current">Thời Điểm</span>
-                          <ul className="list">
-                            <li
-                              data-value="Sáng"
-                              className="option"
-                            >
-                              Sáng
-                            </li>
-                            <li data-value="Chiều" className="option">
-                              Chiều
-                            </li>
-                            <li data-value="Tối" className="option">
-                              Tối
-                            </li>
-                          </ul>
+                        <div style={{ color: 'red', paddingBottom: 10 }}>
+                          {errors.time &&
+                            errors.time.type === 'required' &&
+                            'Vui lòng lựa chọn giờ!'}
                         </div>
-                 */}
                       </div>
                     </div>
                   </div>
                   <div className="col-lg-12">
                     <div className="input_field">
-                      <select className="wide">
-                        <option data-display="Số người">Số người</option>
-                        <option value="1"> 5</option>
-                        <option value="1">10</option>
+                      <select name="people" ref={register({ required: true })}>
+                        <option value="" disabled selected hidden>
+                          Bạn đi với bao nhiêu người?
+                        </option>
+                        <option value="5 "> {`< 5`} </option>
+                        <option value="5 ">5 </option>
+                        <option value="10 ">10 </option>
+                        <option value="> 15 "> > 15 </option>
                       </select>
-                      <div className="nice-select wide" tabIndex="0">
-                        <span className="current"> Số Người </span>
-                        <ul className="list">
-                          <li
-                            data-value="5"
-                            data-display="5"
-                            className="option selected"
-                          >
-                            5
-                          </li>
-                          <li data-value="1" className="option">
-                            10
-                          </li>
-                          <li data-value="1" className="option">
-                            >15
-                          </li>
-                        </ul>
-                      </div>
+                      <div style={style_validate}>
+                          {errors.people &&
+                            errors.people.type === 'required' &&
+                            'Vui lòng lựa chọn số lượng người!'}
+                        </div>
                     </div>
                   </div>
                   <div className="col-xl-12">
