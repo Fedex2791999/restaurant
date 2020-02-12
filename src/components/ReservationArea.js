@@ -10,6 +10,11 @@ export default function ReservationArea() {
         let response = JSON.stringify(res.data);
         console.log('response');
         console.log(response);
+        if (response === '-2') {
+          alert(
+            `Số điện thoại ${data.phone} đã có người sử dụng, vui lòng nhập số điện thoại khác!`
+          );
+        }
         if (response === '0') {
           alert(
             `Xin lỗi ngày ${data.date}, vào thời điểm lúc ${data.time}h, bàn số ${data.number_table} đã có người đặt, quý khách vui lòng chọn vào khung giờ khác! `
@@ -190,7 +195,10 @@ export default function ReservationArea() {
                   </div>
                   <div className="col-lg-6">
                     <div className="input_field">
-                      <select name="number_table" ref={register({ required: true })}>
+                      <select
+                        name="number_table"
+                        ref={register({ required: true })}
+                      >
                         <option value="" disabled selected hidden>
                           Bàn số ?
                         </option>

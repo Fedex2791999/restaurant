@@ -47,14 +47,23 @@ app.get('/dessert', (req, res) => {
 
   // connection.end();
 });
-
+app.get('/feedback', (req,res) =>{
+  let sql = 'SELECT * FROM `feedback` ';
+  connection.query(sql, (error, results, fields) => {
+    if (error) throw error;
+    res.end(JSON.stringify(results));
+  });
+})
 app.post('/check_booking', (req, res) => {
   // console.log(req.body);
   let sql = 'SELECT* FROM `booking` ';
   connection.query(sql, (err, results) => {
     if (err) console.log(err);
     const values = JSON.parse(JSON.stringify(results));
-    if (check.booking(req.body, values) === 0) {
+    if (check.booking(req.body, values) === -2){
+      res.end('-2');
+    }
+   else if (check.booking(req.body, values) === 0) {
       res.end('0');
 
       // res.end(`Xin lỗi ngày ${req.body.date}, vào thời điểm lúc ${req.body.time}h, bàn số ${req.body.table} đã có người đặt, quý khách vui lòng chọn vào khung giờ khác! `);
@@ -97,7 +106,6 @@ app.post('/booking', (req, res) => {
   let values = [name, phone, date, time, people, number_table];
   connection.query(sql, values, (err, result, fields) => {
     if (err) console.log(err);
-    console.log('Added to database');
     console.log(result);
   });
 
@@ -112,6 +120,33 @@ app.post('/booking', (req, res) => {
   //   .then(message => console.log(message.sid));
   // res.end('Đã gửi tin nhắn');
 });
+app.post('/check_feedback',(req, res) =>{
+  let sql = 'SELECT* FROM `feedback` ';
+  connection.query(sql, (err, results) => {
+    if (err) console.log(err);
+    const values = JSON.parse(JSON.stringify(results));
+    if (check.feedback(req.body, values) === -1){
+      res.end('-1');
+    }
+     else {
+      res.end('1');
+    }
+  });
+})
+app.post('/feedback', (req, res)=>{
+  console.log("FeedBack");
+  console.log(req.body);
+  const {name, content, phone} = req.body
+  let sql = `INSERT INTO feedback(name, content,phone)  VALUES (?, ?, ? )`;
+  console.log(sql);
+  let values = [name, content,phone];
+  connection.query(sql, values, (err, result, fields) => {
+    if (err) console.log(err);
+    console.log(result);
+  });
+
+  res.end('Ok')
+})
 const port = 5000;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));

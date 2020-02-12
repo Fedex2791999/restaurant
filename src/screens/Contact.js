@@ -1,10 +1,37 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-
+import axios from 'axios';
 export default function Contact() {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = data => {
     console.log(data);
+    axios
+      .post('/check_feedback', data)
+      .then(res => {
+        let response = JSON.stringify(res.data);
+        console.log('feedback');
+        console.log(response);
+        if (response === '-1') {
+          alert(
+            `Quý khách đã phản hồi với số điện thoại:  ${data.phone}, vui lòng kiểm tra lại!  `
+          );
+        }
+        if (response === '1') {
+          alert('Đã ghi nhận phản hồi của bạn!');
+
+          axios
+            .post('/feedback', data)
+            .then(res => {
+              console.log(res.data);
+            })
+            .catch(err => {
+              console.log(err);
+            });
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
   const style_validate = {
     color: 'red'
@@ -34,9 +61,10 @@ export default function Contact() {
                 onSubmit={handleSubmit(onSubmit)}
               >
                 <div className="row">
-                  <div className="col-sm-12">
+                  <div className="col-sm-6">
                     <div className="form-group">
                       <input
+                        className="form-control valid"
                         name="name"
                         ref={register({
                           required: true,
@@ -52,15 +80,50 @@ export default function Contact() {
                       </div>
                     </div>
                   </div>
+                  <div className="col-sm-6">
+                    <div className="form-group">
+                      <input
+                        className="form-control valid"
+                        name="phone"
+                        ref={register({
+                          required: true,
+                          maxLength: 11,
+                          minLength: 10
+                        })}
+                        placeholder="Số điện thoại của bạn"
+                        type="number"
+                      />
+                      <div style={style_validate}>
+                        {errors.phone &&
+                          errors.phone.type === 'required' &&
+                          'Vui lòng nhập số điện thoại của bạn!'}
+                      </div>
+                      <div style={style_validate}>
+                        {errors.phone &&
+                          errors.phone.type === 'maxLength' &&
+                          'Số điện thoại không hợp lệ!'}
+                      </div>
+                      <div style={style_validate}>
+                        {errors.phone &&
+                          errors.phone.type === 'minLength' &&
+                          'Số điện thoại không hợp lệ!'}
+                      </div>
+                    </div>
+                  </div>
 
                   <div className="col-12">
                     <div className="form-group">
                       <textarea
+                        className="form-control w-100"
+                        id="message"
                         name="content"
+                        cols="30"
+                        rows="9"
                         ref={register({ required: true })}
                         placeholder="Nội dung muốn phản hồi"
                       />
-                       <div style={style_validate}>
+
+                      <div style={style_validate}>
                         {errors.content &&
                           errors.content.type === 'required' &&
                           'Vui lòng nhập nội dung muốn phản hồi!'}{' '}
