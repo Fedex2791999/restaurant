@@ -9,9 +9,9 @@ export default function DeliciousArea() {
   const [listHotPot, setListHotPot] = useState([]);
   const [listGrill, setListGrill] = useState([]);
   const [listDessert, setListDessert] = useState([]);
-  console.log(listHotPot);
-  console.log(listGrill);
-  console.log(listDessert);
+  // console.log(listHotPot);
+  // console.log(listGrill);
+  // console.log(listDessert);
   const listMenu = [
     {
       name: 'Lẩu',

@@ -1,6 +1,7 @@
 const express = require('express');
 var mysql = require('mysql');
 const bodyParser = require('body-parser');
+var check = require('./function/check');
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -21,35 +22,90 @@ connection.connect(function(err) {
   console.log('Connected!');
 });
 app.get('/hotpot', (req, res) => {
-  connection.query('SELECT * FROM `menu_hotpot` ', (error, results, fields) => {
+  let sql = 'SELECT * FROM `menu_hotpot` ';
+  connection.query(sql, (error, results, fields) => {
     if (error) throw error;
     res.end(JSON.stringify(results));
   });
   // connection.end();
 });
 app.get('/grill', (req, res) => {
-  connection.query('SELECT * FROM `menu_grill` ', (error, results, fields) => {
+  let sql = 'SELECT * FROM `menu_grill` ';
+  connection.query(sql, (error, results, fields) => {
     if (error) throw error;
     res.end(JSON.stringify(results));
   });
   // connection.end();
 });
 app.get('/dessert', (req, res) => {
-  connection.query(
-    'SELECT * FROM `menu_dessert` ',
-    (error, results, fields) => {
-      if (error) throw error;
-      res.end(JSON.stringify(results));
-    }
-  );
+  let sql = 'SELECT * FROM `menu_dessert` ';
+  connection.query(sql, (error, results, fields) => {
+    if (error) throw error;
+
+    res.end(JSON.stringify(results));
+  });
 
   // connection.end();
 });
 
+app.post('/check_booking', (req, res) => {
+  // console.log(req.body);
+  let sql = 'SELECT* FROM `booking` ';
+  connection.query(sql, (err, results) => {
+    if (err) console.log(err);
+    const values = JSON.parse(JSON.stringify(results));
+    if (check.booking(req.body, values) === 0) {
+      res.end('0');
+
+      // res.end(`Xin lỗi ngày ${req.body.date}, vào thời điểm lúc ${req.body.time}h, bàn số ${req.body.table} đã có người đặt, quý khách vui lòng chọn vào khung giờ khác! `);
+    } else if (check.booking(req.body, values) === -1) {
+      res.end('-1');
+      // res.end(`Vào ngày ${req.body.date}, lúc ${req.body.time}h , quý khách đã đặt bàn rồi, vui lòng kiểm tra lại!`)
+    } else {
+      res.end('1');
+      // res.end('Đặt bàn thành công!');
+    }
+  });
+});
 app.post('/booking', (req, res) => {
   console.log(req.body);
-  // const sms = 'Tên tôi là: ' + req.body.name + '\nSố điện thoại là: ' + req.body.phoneNumber;
+
+  const { phone, date, time, people, name, ban } = req.body;
+  console.log('Kieu table');
+
+  console.log(typeof ban);
+
+  // const sms =
+  //   '\n==ĐẶT BÀN==\n\n' +
+  //   'Tôi tên là: ' +
+  //   name +
+  //   '\nSĐT: ' +
+  //   phone +
+  //   '\nĐã đặt bàn vào ngày: ' +
+  //   date +
+  //   '\nVào lúc: ' +
+  //   time +
+  //   ' h' +
+  //   '\nBàn số: ' +
+  //   table +
+  //   '\nSố lượng người: ' +
+  //   people +
+  //   '\n\n====TRÂN TRỌNG====';
   // console.log(sms);
+
+  // insert into database
+  let sql = `INSERT INTO booking(name, phone, date,  time, people, ban, )  VALUES (?, ? , ?, ?, ?, ?)`;
+  console.log(sql);
+
+  let values = [name, phone, date, time, people, ban];
+  connection.query(sql, values, (err, result, fields) => {
+    if (err) console.log(err);
+    console.log('Added to database');
+    console.log(result);
+  });
+
+  // send message to my phone
+
   // client.messages
   //   .create({
   //     body: sms,
@@ -57,7 +113,7 @@ app.post('/booking', (req, res) => {
   //     to: '+84973405092'
   //   })
   //   .then(message => console.log(message.sid));
-  res.end('Đã gửi tin nhắn');
+  // res.end('Đã gửi tin nhắn');
 });
 const port = 5000;
 

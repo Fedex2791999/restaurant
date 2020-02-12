@@ -4,12 +4,40 @@ import { useForm } from 'react-hook-form';
 export default function ReservationArea() {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = data => {
-    console.log(data);
-    alert('Đặt bàn thành công!');
+    axios
+      .post('/check_booking', data)
+      .then(res => {
+        let response = JSON.stringify(res.data);
+        console.log('response');
+        console.log(response);
+        if (response === '0') {
+          alert(
+            `Xin lỗi ngày ${data.date}, vào thời điểm lúc ${data.time}h, bàn số ${data.table} đã có người đặt, quý khách vui lòng chọn vào khung giờ khác! `
+          );
+        }
+        if (response === '-1') {
+          alert(
+            `Vào ngày ${data.date}, lúc ${data.time}h , quý khách đã đặt bàn rồi, vui lòng kiểm tra lại!`
+          );
+        }
+        if (response === '1') {
+          alert('Đặt  bàn thành công!');
+          axios
+            .post('/booking', data)
+            .then(res => {
+              console.log(res);
+            })
+            .catch(err => {
+              console.log(err);
+            });
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
   const style_validate = {
-    color: 'red',
-    marginTop: 5
+    color: 'red'
   };
   return (
     <div className="Reservation_area">
@@ -55,7 +83,7 @@ export default function ReservationArea() {
                   <div className="col-lg-6">
                     <div className="input_field mb_15">
                       <input
-                        name="firstName"
+                        name="name"
                         ref={register({
                           required: true,
                           maxLength: 20,
@@ -64,18 +92,18 @@ export default function ReservationArea() {
                         placeholder="Tên"
                       />
                       <div style={style_validate}>
-                        {errors.firstName &&
-                          errors.firstName.type === 'required' &&
+                        {errors.name &&
+                          errors.name.type === 'required' &&
                           'Vui lòng nhập vào ô này!'}{' '}
                       </div>
                       <div style={style_validate}>
-                        {errors.firstName &&
-                          errors.firstName.type === 'maxLength' &&
+                        {errors.name &&
+                          errors.name.type === 'maxLength' &&
                           'Vui lòng kiểm tra lại tên!'}
                       </div>
                       <div style={style_validate}>
-                        {errors.firstName &&
-                          errors.firstName.type === 'minLength' &&
+                        {errors.name &&
+                          errors.name.type === 'minLength' &&
                           'Vui lòng kiểm tra lại tên!'}
                       </div>
                     </div>
@@ -120,7 +148,13 @@ export default function ReservationArea() {
                           type="date"
                           ref={register({ required: true })}
                         />
-                        <div style={{ color: 'red', marginTop: 18, marginBottom: 15 }}>
+                        <div
+                          style={{
+                            color: 'red',
+                            marginTop: 18,
+                            marginBottom: 15
+                          }}
+                        >
                           {errors.date &&
                             errors.date.type === 'required' &&
                             'Vui lòng lựa chọn ngày ăn!'}
@@ -139,14 +173,14 @@ export default function ReservationArea() {
                           <option value="" disabled selected hidden>
                             Thời gian sẽ đến?
                           </option>
-                          <option value="18.00">18.00</option>
-                          <option value="19.00">19.00</option>
-                          <option value="20.00">20.00</option>
-                          <option value="21.00">21.00</option>
-                          <option value="22.00">22.00</option>
-                          <option value="23.00">23.00</option>
+                          <option value="18:00">18:00</option>
+                          <option value="19:00">19:00</option>
+                          <option value="20:00">20:00</option>
+                          <option value="21:00">21:00</option>
+                          <option value="22:00">22:00</option>
+                          <option value="23:00">23:00</option>
                         </select>
-                        <div style={{ color: 'red', paddingBottom: 10 }}>
+                        <div style={{ color: 'red' }}>
                           {errors.time &&
                             errors.time.type === 'required' &&
                             'Vui lòng lựa chọn giờ!'}
@@ -154,7 +188,30 @@ export default function ReservationArea() {
                       </div>
                     </div>
                   </div>
-                  <div className="col-lg-12">
+                  <div className="col-lg-6">
+                    <div className="input_field">
+                      <select name="ban" ref={register({ required: true })}>
+                        <option value="" disabled selected hidden>
+                          Bàn số ?
+                        </option>
+                        <option value="1"> 1 </option>
+                        <option value="2">2 </option>
+                        <option value="3">3 </option>
+                        <option value="4"> 4 </option>
+                        <option value="5"> 5 </option>
+                        <option value="6">6 </option>
+                        <option value="7">7 </option>
+                        <option value="8"> 8 </option>
+                      </select>
+                      <div style={style_validate}>
+                        {errors.table &&
+                          errors.table.type === 'required' &&
+                          'Vui lòng lựa chọn số bàn sẽ ăn!'}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="col-lg-6">
                     <div className="input_field">
                       <select name="people" ref={register({ required: true })}>
                         <option value="" disabled selected hidden>
@@ -166,12 +223,13 @@ export default function ReservationArea() {
                         <option value="> 15 "> > 15 </option>
                       </select>
                       <div style={style_validate}>
-                          {errors.people &&
-                            errors.people.type === 'required' &&
-                            'Vui lòng lựa chọn số lượng người!'}
-                        </div>
+                        {errors.people &&
+                          errors.people.type === 'required' &&
+                          'Vui lòng lựa chọn số lượng người!'}
+                      </div>
                     </div>
                   </div>
+
                   <div className="col-xl-12">
                     <button className="sumbit_btn" type="submit">
                       Đặt bàn
