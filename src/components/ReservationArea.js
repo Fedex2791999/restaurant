@@ -12,7 +12,7 @@ export default function ReservationArea() {
         console.log(response);
         if (response === '0') {
           alert(
-            `Xin lỗi ngày ${data.date}, vào thời điểm lúc ${data.time}h, bàn số ${data.table} đã có người đặt, quý khách vui lòng chọn vào khung giờ khác! `
+            `Xin lỗi ngày ${data.date}, vào thời điểm lúc ${data.time}h, bàn số ${data.number_table} đã có người đặt, quý khách vui lòng chọn vào khung giờ khác! `
           );
         }
         if (response === '-1') {
@@ -190,7 +190,7 @@ export default function ReservationArea() {
                   </div>
                   <div className="col-lg-6">
                     <div className="input_field">
-                      <select name="ban" ref={register({ required: true })}>
+                      <select name="number_table" ref={register({ required: true })}>
                         <option value="" disabled selected hidden>
                           Bàn số ?
                         </option>
@@ -204,8 +204,8 @@ export default function ReservationArea() {
                         <option value="8"> 8 </option>
                       </select>
                       <div style={style_validate}>
-                        {errors.table &&
-                          errors.table.type === 'required' &&
+                        {errors.number_table &&
+                          errors.number_table.type === 'required' &&
                           'Vui lòng lựa chọn số bàn sẽ ăn!'}
                       </div>
                     </div>

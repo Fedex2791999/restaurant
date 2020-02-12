@@ -40,7 +40,7 @@ export default function Footer() {
                       </li>
                       <li>
                          <a href="https://github.com/Fedex2791999">
-                         <i class="fa fa-github"></i>
+                         <i className="fa fa-github"></i>
                         </a>
                       </li>
                       <li>

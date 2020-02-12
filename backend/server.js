@@ -68,12 +68,9 @@ app.post('/check_booking', (req, res) => {
   });
 });
 app.post('/booking', (req, res) => {
+  console.log('Booking');
   console.log(req.body);
-
-  const { phone, date, time, people, name, ban } = req.body;
-  console.log('Kieu table');
-
-  console.log(typeof ban);
+  const { phone, date, time, people, name, number_table } = req.body;
 
   // const sms =
   //   '\n==ĐẶT BÀN==\n\n' +
@@ -94,10 +91,10 @@ app.post('/booking', (req, res) => {
   // console.log(sms);
 
   // insert into database
-  let sql = `INSERT INTO booking(name, phone, date,  time, people, ban, )  VALUES (?, ? , ?, ?, ?, ?)`;
+  let sql = `INSERT INTO booking(name, phone, date,  time, people, number_table)  VALUES (?, ? , ?, ?, ?, ?)`;
   console.log(sql);
 
-  let values = [name, phone, date, time, people, ban];
+  let values = [name, phone, date, time, people, number_table];
   connection.query(sql, values, (err, result, fields) => {
     if (err) console.log(err);
     console.log('Added to database');

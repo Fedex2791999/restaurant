@@ -1,130 +1,117 @@
-import React  from 'react';
+import React from 'react';
+import { useForm } from 'react-hook-form';
 
 export default function Contact() {
-    return (
-      <div>
-        <div class="bradcam_area bradcam_bg_2">
-          <div class="container">
-            <div class="row">
-              <div class="col-xl-12">
-                <div class="bradcam_text text-center">
-                  {/* <h3>contact</h3> */}
-                </div>
+  const { register, handleSubmit, errors } = useForm();
+  const onSubmit = data => {
+    console.log(data);
+  };
+  const style_validate = {
+    color: 'red'
+  };
+  return (
+    <div>
+      <div className="bradcam_area bradcam_bg_2">
+        <div className="container">
+          <div className="row">
+            <div className="col-xl-12">
+              <div className="bradcam_text text-center">
+                {/* <h3>contact</h3> */}
               </div>
             </div>
           </div>
         </div>
-        <div class="contact-section">
-          <div class="container">
-            <div class="row">
-              <div class="col-12">
-                <h2 class="contact-title">Liên Hệ</h2>
-              </div>
-              <div class="col-lg-8">
-                <form
-                  class="form-contact contact_form"
-                  action="contact_process.php"
-                  method="post"
-                  id="contactForm"
-                  novalidate="novalidate"
-                >
-                  <div class="row">
-                    <div class="col-12">
-                      <div class="form-group">
-                        <textarea
-                          class="form-control w-100"
-                          name="message"
-                          id="message"
-                          cols="30"
-                          rows="9"
-                          onfocus="this.placeholder = ''"
-                          onblur="this.placeholder = 'Enter Message'"
-                          placeholder="Vui lòng nhập lời nhắn "
-                        ></textarea>
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                        <input
-                          class="form-control valid"
-                          name="name"
-                          id="name"
-                          type="text"
-                          onfocus="this.placeholder = ''"
-                          onblur="this.placeholder = 'Enter your name'"
-                          placeholder="Nhập tên"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                        <input
-                          class="form-control valid"
-                          name="email"
-                          id="email"
-                          type="email"
-                          onfocus="this.placeholder = ''"
-                          onblur="this.placeholder = 'Enter email address'"
-                          placeholder="Địa chỉ email"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <div class="form-group">
-                        <input
-                          class="form-control"
-                          name="subject"
-                          id="subject"
-                          type="text"
-                          onfocus="this.placeholder = ''"
-                          onblur="this.placeholder = 'Enter Subject'"
-                          placeholder="Chọn chủ đề"
-                        />
+      </div>
+      <div className="contact-section">
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <h2 className="contact-title">Phản Hồi</h2>
+            </div>
+            <div className="col-lg-8">
+              <form
+                className="form-contact contact_form"
+                onSubmit={handleSubmit(onSubmit)}
+              >
+                <div className="row">
+                  <div className="col-sm-12">
+                    <div className="form-group">
+                      <input
+                        name="name"
+                        ref={register({
+                          required: true,
+                          maxLength: 20,
+                          minLength: 5
+                        })}
+                        placeholder="Nhập tên của bạn"
+                      />
+                      <div style={style_validate}>
+                        {errors.name &&
+                          errors.name.type === 'required' &&
+                          'Vui lòng nhập tên của bạn!'}{' '}
                       </div>
                     </div>
                   </div>
-                  <div class="form-group mt-3">
-                    <button
-                      type="submit"
-                      class="button button-contactForm boxed-btn"
-                    >
-                      Gửi
-                    </button>
-                  </div>
-                </form>
-              </div>
-              <div class="col-lg-3 offset-lg-1">
-                <div class="media contact-info">
-                  <span class="contact-info__icon">
-                    <i class="ti-home"></i>
-                  </span>
-                  <div class="media-body">
-                    <h3>Số nhà 20, ngách 117/36 xóm Hoàng Văn Thụ</h3>
-                    <p>Dương Nội, Hà Đông, Hà Nội</p>
+
+                  <div className="col-12">
+                    <div className="form-group">
+                      <textarea
+                        name="content"
+                        ref={register({ required: true })}
+                        placeholder="Nội dung muốn phản hồi"
+                      />
+                       <div style={style_validate}>
+                        {errors.content &&
+                          errors.content.type === 'required' &&
+                          'Vui lòng nhập nội dung muốn phản hồi!'}{' '}
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="media contact-info">
-                  <span class="contact-info__icon">
-                    <i class="ti-tablet"></i>
-                  </span>
-                  <div class="media-body">
-                    <h3>+8473405092</h3>
-                    <p>Nhà hàng mở mọi ngày từ thứ 2 đến chủ nhật, từ 18.00-1.00</p>
-                  </div>
+                <div className="form-group mt-3">
+                  <button
+                    type="submit"
+                    className="button button-contactForm boxed-btn"
+                  >
+                    Gửi
+                  </button>
                 </div>
-                <div class="media contact-info">
-                  <span class="contact-info__icon">
-                    <i class="ti-email"></i>
-                  </span>
-                  <div class="media-body">
-                    <h3>Codatduoc@gmail.com</h3>
-                    <p>Hãy gửi chúng tôi bất cứ lúc nào!</p>
-                  </div>
+              </form>
+            </div>
+            <div className="col-lg-3 offset-lg-1">
+              <div className="media contact-info">
+                <span className="contact-info__icon">
+                  <i className="ti-home"></i>
+                </span>
+                <div className="media-body">
+                  <h3>Số nhà 20, ngách 117/36 xóm Hoàng Văn Thụ</h3>
+                  <p>Dương Nội, Hà Đông, Hà Nội</p>
+                </div>
+              </div>
+              <div className="media contact-info">
+                <span className="contact-info__icon">
+                  <i className="ti-tablet"></i>
+                </span>
+                <div className="media-body">
+                  <h3>+8473405092</h3>
+                  <p>
+                    Nhà hàng mở mọi ngày từ thứ 2 đến chủ nhật, từ 18.00-1.00
+                  </p>
+                </div>
+              </div>
+              <div className="media contact-info">
+                <span className="contact-info__icon">
+                  <i className="ti-email"></i>
+                </span>
+                <div className="media-body">
+                  <h3>Codatduoc@gmail.com</h3>
+                  <p>Hãy gửi chúng tôi bất cứ lúc nào!</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    );
+    </div>
+  );
 }
