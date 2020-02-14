@@ -11,7 +11,8 @@ export default function DeliciousArea() {
   const [listDessert, setListDessert] = useState([]);
   // console.log(listHotPot);
   // console.log(listGrill);
-  // console.log(listDessert);
+
+  
   const listMenu = [
     {
       name: 'Lẩu',

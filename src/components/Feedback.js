@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import SingleFeedback from '../components/feedback/SingleFeedback';
 import OwlCarousel from 'react-owl-carousel';
 import axios from 'axios';
 export default function Feedback() {
@@ -10,8 +11,6 @@ export default function Feedback() {
     });
   }, []);
 
-  console.log('listFeedback');
-  console.log(listFeedback);
 
   return (
     <div className="testimonial_area overlay ">
@@ -26,85 +25,20 @@ export default function Feedback() {
         </div>
         <div className="row">
           <div className="col-xl-12">
-            <OwlCarousel
-              className="owl-theme"
-              loop
-              items={2}
-              autoplay={true}
-              autoplayTimeout={6000}
-              dots={false}
-            >
-              <div className="single_carousel">
-                <div className="single_testmonial ">
-                  <div className="author_opinion">
-                    <p>abc</p>
-                  </div>
-                  <div className="testmonial_author">
-                    <div className="thumb">
-                      <img src="img/testimonial/author2.png" alt="" />
-                    </div>
-                    <div className="name">
-                      <h3>Em Linh</h3>
-                      <div className="icon">
-                        <a href="/">
-                          <i className="fa fa-star"></i>{' '}
-                        </a>
-                        <a href="/">
-                          <i className="fa fa-star"></i>{' '}
-                        </a>
-                        <a href="/">
-                          <i className="fa fa-star"></i>{' '}
-                        </a>
-                        <a href="/">
-                          <i className="fa fa-star"></i>{' '}
-                        </a>
-                        <a href="/">
-                          <i className="fa fa-star"></i>{' '}
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="single_carousel">
-                <div className="single_testmonial ">
-                  <div className="author_opinion">
-                    <p>
-                      Phục vụ khách rất nhiệt tình, chúc nhà hàng sớm phát triển
-                      có nhiều khách hơn nữa.
-                    </p>
-                  </div>
-                  <div className="testmonial_author">
-                    <div className="thumb">
-                      <img src="img/testimonial/author.png" alt="" />
-                    </div>
-                    <div className="name">
-                      <h3>Anh Hùng</h3>
-                      <div className="icon">
-                        <a href="/">
-                          <i className="fa fa-star"></i>{' '}
-                        </a>
-                        <a href="/">
-                          <i className="fa fa-star"></i>{' '}
-                        </a>
-                        <a href="/">
-                          <i className="fa fa-star"></i>{' '}
-                        </a>
-                        <a href="/">
-                          <i className="fa fa-star"></i>{' '}
-                        </a>
-                        <a href="/">
-                          <i className="fa fa-star"></i>{' '}
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-           
-           
-            </OwlCarousel>
+            {listFeedback.length && (
+              <OwlCarousel
+                className="owl-theme"
+                loop
+                items={2}
+                autoplay={true}
+                autoplayTimeout={3000}
+                dots={false}
+              >
+                {listFeedback.map((data, index) => (
+                  <SingleFeedback data={data} key={index} />
+                ))}
+              </OwlCarousel>
+            )}
           </div>
         </div>
       </div>

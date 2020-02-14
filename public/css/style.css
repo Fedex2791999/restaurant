@@ -2128,6 +2128,8 @@ h3 {
   border: 2px solid #db9a64;
   margin-bottom: 30px;
   position: relative;
+  height: 160px;
+  margin-right: 50px
 }
 
 /* line 53, ../../Arafath/CL/Cl November/225. Restaurant-02/HTML/scss/_testmonial.scss */
@@ -2179,15 +2181,13 @@ h3 {
 /* line 91, ../../Arafath/CL/Cl November/225. Restaurant-02/HTML/scss/_testmonial.scss */
 .testimonial_area .single_testmonial .testmonial_author .name {
   overflow: hidden;
-  padding-left: 15px;
+  padding-left: 30px;
   position: relative;
   top: 13px;
 }
 
 /* line 97, ../../Arafath/CL/Cl November/225. Restaurant-02/HTML/scss/_testmonial.scss */
 .testimonial_area .single_testmonial .testmonial_author .thumb {
-  width: 70px;
-  height: 70px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
@@ -2209,9 +2209,8 @@ h3 {
 }
 
 /* line 114, ../../Arafath/CL/Cl November/225. Restaurant-02/HTML/scss/_testmonial.scss */
-.testimonial_area .single_testmonial .testmonial_author .icon a {
+.testimonial_area .single_testmonial .testmonial_author .icon .fa-star {
   color: #db9a64;
-  font-size: 13px;
   margin-right: 3px;
 }
 
