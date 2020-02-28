@@ -70,12 +70,11 @@ export default function ReservationArea() {
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3725.422777631438!2d105.75468847885134!3d20.975683387953943!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x96fe772983bfa7ca!2zUXVhbmcgTHV54bq_biBRdcOhbg!5e0!3m2!1svi!2sus!4v1581783213505!5m2!1svi!2sus"
                   frameborder="0"
-                  style={{ border: 0 }}
                   allowfullscreen=""
                   title="map"
                 ></iframe>
               </div>
-              <div className="box-map-title" style={{ marginTop: 40 }}>
+              <div className="box-map-title" style={{ marginTop: 25 }}>
                 <h3 style={{ marginBottom: 8 }}>Lẩu nướng Quang Luyến</h3>
                 <div className="inline">
                   <p>5</p>
@@ -323,17 +322,11 @@ export default function ReservationArea() {
                     </div>
                     <div className="col-lg-12">
                       <div className="single_add d-flex">
-                        <div className="icon">
-                          <img src="img/svg_icon/head.svg" alt="" />
-                        </div>
-                        <div className="ifno">
-                          <h4>Liên hệ</h4>
-                          <p>0904237071</p>
-                        </div>
+                       
                       </div>
                     </div>
-               
-               
+              
+              
                   </div>
                 </div>
               </form>

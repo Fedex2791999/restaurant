@@ -8,12 +8,12 @@ export default function BradcamAreaAbout() {
           <div className="col-xl-12">
             <h3>Giới thiệu</h3>
             <p>
-              Sun Homes BBQ là mô hình phục vụ các món ăn gọi riêng lẻ theo nhu
-              cầu. Mỗi món tương ứng với giá tiền khác nhau. King BBQ mô hình
+              Lẩu nướng Quang Luyến là mô hình phục vụ các món ăn gọi riêng lẻ theo nhu
+              cầu. Mỗi món tương ứng với giá tiền khác nhau.BBQ mô hình
               gọi món, với thực đơn đa dạng hơn 200 món ăn cùng các set bộ và
               combo dành cho 2-4 người với mức giá hợp lý. Món sườn King là món
               ăn đặc trưng và rất nổi tiếng mà bất cứ thực khách nào đến King
-              BBQ cũng không thể bỏ qua. Sun Homes BBQ là điểm đến cho các khách
+              BBQ cũng không thể bỏ qua.  Lẩu nướng Quang Luyến là điểm đến cho các khách
               hàng có nhu cầu tiếp khách, tụ tập bạn bè, gia đình, liên hoan
               sinh nhật.
             </p>

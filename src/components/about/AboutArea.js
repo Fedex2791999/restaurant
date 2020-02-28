@@ -16,21 +16,21 @@ export default function AboutArea() {
         <div className="row align-items-center">
           <div className="col-lg-6">
             <div className="about_info_wrap">
-              <h3>Sun Homes BBQ</h3>
+              <h3>Lẩu nướng Quang Luyến</h3>
               <span className="long_dash"></span>
               <p>
-                Sun Homes BBQ (Quán thịt nướng Hàn Quốc) sẽ đưa bạn đến Seoul,
-                nơi những con phố bình dị, những quán ăn dân dã đã trở nên quen
-                thuộc và gắn bó với người dân xứ Hàn. Nếu đã một lần thưởng thức
-                thịt nướng tại Sun Homes BBQ, bạn sẽ không thể quên được hương
-                vị “ngất ngây” của những món sườn non bò Mỹ, nạc vai bò Mỹ, dẻ
-                sườn tươi…. khi hòa quyện vào với các loại gia vị đặc trưng của
-                xứ sở Kimchi đã trở nên hấp dẫn đến thế nào. Bí quyết của Sun
-                Homes BBQ nằm ở nước sốt tẩm ướp thịt được chế biến từ nguyên
-                liệu hoàn toàn tự nhiên, theo công thức bí truyền, do Bếp Trưởng
-                Park Sung Min hơn 40 năm kinh nghiệm nghiên cứu và chế biến. Sun
-                Homes BBQ có 2 dạng thực đơn để Quý Khách lựa chọn là: Chọn
-                Combo và Gọi Món.
+                Lẩu nướng Quang Luyến sẽ đưa bạn đến yên bình, nơi những con phố
+                bình dị, với những món ăn dân dã, giá cả hợp lý, Nếu đã một lần
+                thưởng thức thịt nướng tại Lẩu nướng Quang Luyến, bạn sẽ không
+                thể quên được hương vị “ngất ngây” của những món thịt bò Mỹ, bò
+                bắp Mỹ, mực tươi…. ăn kèm với đó là món kim chi siêu cay, giúp
+                quí khách thưởng thức những món thịt nướng mà không bị ngấy, ăn
+                hết lại muốn gọi thêm. Bí quyết của Lẩu nướng Quang Luyến nằm ở
+                nước sốt me chấm thịt nướng, nước sốt được làm từ me tươi nấu
+                với quế tạo mùi hương nồng nhẹ cay cay, tạo cảm giác ngon miệng
+                khi chấm kèm với thịt nướng.Ngoài nướng nổi tiếng nhiều năm nay,
+                hiện nay nhà hàng có bán thêm những món lẩu, tất cả các món ăn
+                được ghi rõ ở thực đơn, chúc quý khách ăn ngon miệng!
               </p>
               <ul className="food_list">
                 <li>
@@ -47,10 +47,10 @@ export default function AboutArea() {
           <div className="col-lg-6">
             <div className="about_img">
               <div className="img_1">
-                <img src="img/about/big.png" alt="" />
+                <img src="img/about/big.png" alt="" width = '460px' height = '440px' />
               </div>
               <div className="small_img">
-                <img src="img/about/small.png" alt="" />
+                <img src="img/about/small.png" alt="" width = '321px' height = '324px'/>
               </div>
             </div>
           </div>

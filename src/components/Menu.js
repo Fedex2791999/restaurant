@@ -2,14 +2,6 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 export default function Menu() {
-  const style_logo = {
-    color: 'white',
-    display: 'inline',
-    fontWeight: '500',
-    fontStyle: 'italic',
-    marginLeft: '20px',
-    fontSize: '25px'
-  }
   return (
     <div>
       <div className="header-area ">
@@ -20,10 +12,7 @@ export default function Menu() {
                 <div className="col-xl-3 col-lg-2">
                   <div className="logo">
                     <Link to="/">
-                      <img src="img/logo.png" alt="" />{' '}
-                      <h1 style={style_logo}>
-                      Quang Luyến Quán
-                      </h1>
+                      <img src="img/logo_test.jpg" alt="" />
                     </Link>
                   </div>
                 </div>
@@ -44,13 +33,13 @@ export default function Menu() {
                           <Link to="/about">Giới thiệu</Link>
                         </li>
                         <li>
-                          <Link to="/element">Đặt bàn</Link>
+                          <Link to="/booking">Đặt bàn</Link>
                         </li>
                         {/* <li>
                             <Link to="/blog">Tin tức</Link>
                           </li> */}
                         <li>
-                          <Link to="contact">Liên hệ</Link>
+                          <Link to="/feedback">Phản hồi</Link>
                         </li>
                       </ul>
                     </nav>
@@ -58,7 +47,7 @@ export default function Menu() {
                 </div>
                 <div className="col-xl-3 col-lg-3 d-none d-lg-block">
                   <div className="say_hello">
-                    <Link to="/">Đặt Bàn</Link>
+                    <Link to="/">Ngôn ngữ</Link>
                   </div>
                 </div>
               </div>

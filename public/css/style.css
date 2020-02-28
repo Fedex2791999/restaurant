@@ -202,7 +202,7 @@ h3 {
 
 /* line 131, ../../Arafath/CL/Cl November/225. Restaurant-02/HTML/scss/theme-default.scss */
 .overlay {
-  /* position: relative; */
+  position: relative;
   z-index: 0;
 }
 
@@ -1389,7 +1389,7 @@ h3 {
 
 /* line 1, ../../Arafath/CL/Cl November/225. Restaurant-02/HTML/scss/_slider.scss */
 .slider_bg_1 {
-  background-image: url(../img/banner/banner.jpg);
+  background-image: url(../img/banner/banner_trial.jpg);
 }
 
 /* line 4, ../../Arafath/CL/Cl November/225. Restaurant-02/HTML/scss/_slider.scss */
@@ -1397,12 +1397,14 @@ h3 {
   background-image: url(../img/banner/banner2.jpg);
 }
 .slider_bg_3 {
-  background-image: url(../img/banner/banner3.jpg);
+  background-image: url(../img/banner/banner12.jpg);
 }
 .slider_bg_4 {
-  background-image: url(../img/banner/banner4.jpg);
+  background-image: url(../img/banner/banner5.jpg);
 }
-
+.slider_bg_5 {
+  background-image: url(../img/banner/banner6.jpg);
+}
 /* line 7, ../../Arafath/CL/Cl November/225. Restaurant-02/HTML/scss/_slider.scss */
 .slider_area {
   position: relative;
@@ -2882,12 +2884,12 @@ h3 {
 
 /* line 4, ../../Arafath/CL/Cl November/225. Restaurant-02/HTML/scss/_bradcam.scss */
 .bradcam_bg_2 {
-  background-image: url(../img/banner/bradcam2.png);
+  background-image: url(../img/banner/banner3.jpg);
 }
 
 /* line 7, ../../Arafath/CL/Cl November/225. Restaurant-02/HTML/scss/_bradcam.scss */
 .bradcam_bg_3 {
-  background-image: url(../img/banner/bradcam3.png);
+  background-image: url(../img/banner/banner4.png);
 }
 
 /* line 10, ../../Arafath/CL/Cl November/225. Restaurant-02/HTML/scss/_bradcam.scss */
@@ -2895,6 +2897,15 @@ h3 {
   background-image: url(../img/banner/details.png);
 }
 
+.bradcam_bg_5 {
+  background-image: url(../img/banner/banner14.jpg);
+}
+.bradcam_bg_6 {
+  background-image: url(../img/banner/banner15.jpg);
+}
+.bradcam_bg_7 {
+  background-image: url(../img/banner/banner16.jpg);
+}
 /* line 13, ../../Arafath/CL/Cl November/225. Restaurant-02/HTML/scss/_bradcam.scss */
 .bradcam_area {
   background-size: cover;
@@ -6791,12 +6802,11 @@ h6 {
   width: 100% !important;
   height: 100% !important;
   position: absolute;
-}
- .inline {
+ }
+.inline {
   display: inline-block;
-  
 }
-.box-map-title .icon  .fa-star{
+.box-map-title .icon .fa-star {
   color: #db9a64;
   margin-left: 5px;
 }

@@ -38,17 +38,6 @@ export default function Contact() {
   };
   return (
     <div>
-      <div className="bradcam_area bradcam_bg_2">
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-12">
-              <div className="bradcam_text text-center">
-                {/* <h3>contact</h3> */}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <div className="contact-section">
         <div className="container">
           <div className="row">

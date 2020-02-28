@@ -1,10 +1,13 @@
 import React from 'react';
 import SlideAreaStart from '../components/SlideAreaStart';
 import Menu from '../components/Menu';
-import Elements from './Elements';
+// import Elements from './Elements';
 import OurMenu from './OurMenu';
 import Contact from './Contact';
 import AboutArea from '../components/about/AboutArea';
+import BradcamBooking from '../components/booking/BradcamBooking';
+import BradcamFeedback from '../components/feedback/BradcamFeedback';
+
 import About from './About';
 import Blog from './Blog';
 import DeliciousArea from '../components/DeliciousArea';
@@ -32,14 +35,16 @@ export default function Home() {
           <DeliciousArea />
           {/* <ReservationArea /> */}
         </Route>
-        <Route path="/element">
-          <Elements />
+        <Route path="/booking">
+          <BradcamBooking />
+          <ReservationArea />
         </Route>
         <Route path="/blog">
           <Blog />
         </Route>
-        <Route path="/single-blog"/>
-        <Route path="/contact">
+        <Route path="/single-blog" />
+        <Route path="/feedback">
+          <BradcamFeedback/>
           <Contact />
         </Route>
       </Switch>
