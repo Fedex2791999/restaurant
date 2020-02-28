@@ -8,6 +8,7 @@ export default function  BradcamBooking () {
           <div className="row">
             <div className="col-xl-12">
               <div className="bradcam_text text-center"></div>
+              <div></div>
             </div>
           </div>
         </div>
