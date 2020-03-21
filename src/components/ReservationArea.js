@@ -69,8 +69,8 @@ export default function ReservationArea() {
               <div className="map-responsive">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3725.422777631438!2d105.75468847885134!3d20.975683387953943!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x96fe772983bfa7ca!2zUXVhbmcgTHV54bq_biBRdcOhbg!5e0!3m2!1svi!2sus!4v1581783213505!5m2!1svi!2sus"
-                  frameborder="0"
-                  allowfullscreen=""
+                  frameBorder= '0'
+                  allowFullScreen=""
                   title="map"
                 ></iframe>
               </div>
@@ -110,7 +110,7 @@ export default function ReservationArea() {
                 <div className="map-contact" style={{ marginTop: 10 }}>
                   <p className="inline">
                     <i
-                      class="fa fa-volume-control-phone fa-2x"
+                      className="fa fa-volume-control-phone fa-2x"
                       aria-hidden="true"
                     ></i>
                     <span style={{ marginLeft: 15, fontSize: 20 }}>
@@ -225,7 +225,7 @@ export default function ReservationArea() {
                     <div className="input_field">
                       <div className="input_field">
                         <select name="time" ref={register({ required: true })}>
-                          <option value="" disabled selected hidden>
+                          <option value="" disabled  hidden>
                             Thời gian sẽ đến?
                           </option>
                           <option value="18:00">18:00</option>
@@ -249,7 +249,7 @@ export default function ReservationArea() {
                         name="number_table"
                         ref={register({ required: true })}
                       >
-                        <option value="" disabled selected hidden>
+                        <option value="" disabled  hidden>
                           Bàn số ?
                         </option>
                         <option value="1"> 1 </option>
@@ -272,7 +272,7 @@ export default function ReservationArea() {
                   <div className="col-lg-6">
                     <div className="input_field">
                       <select name="people" ref={register({ required: true })}>
-                        <option value="" disabled selected hidden>
+                        <option value="" disabled  hidden>
                           Bạn đi với bao nhiêu người?
                         </option>
                         <option value="5 "> {`< 5`} </option>
@@ -321,12 +321,8 @@ export default function ReservationArea() {
                       </div>
                     </div>
                     <div className="col-lg-12">
-                      <div className="single_add d-flex">
-                       
-                      </div>
+                      <div className="single_add d-flex"></div>
                     </div>
-              
-              
                   </div>
                 </div>
               </form>

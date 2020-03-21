@@ -5,7 +5,7 @@ import axios from 'axios';
 export default function Feedback() {
   const [listFeedback, setListFeedback] = useState([]);
   useEffect(() => {
-    axios.get(' /feedback').then(res => {
+    axios.get('/feedback').then(res => {
       const data = res.data;
       setListFeedback(data);
     });

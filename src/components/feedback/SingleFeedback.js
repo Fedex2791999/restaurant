@@ -9,7 +9,7 @@ export default function SingleFeedback(props) {
         <div className="testmonial_author">
           <div className="thumb">
             <img
-              src={props.data.image !== '' ? props.data.image : 'https://i.ibb.co/8mFd8hG/download-1.png' }
+              src={ props.data.image !== null ? props.data.image : 'https://i.ibb.co/8mFd8hG/download-1.png' }
               alt="Avatar"
               style={{ borderRadius: '50%', width: 100, height: 100 }}
             />

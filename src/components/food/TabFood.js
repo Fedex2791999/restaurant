@@ -12,7 +12,7 @@ export default function TabFood(props) {
       <div className="row">
         {props.item.listItem.map((item, index) => (
           <div className="col-xl-6 col-md-6 col-lg-6">
-            <SingleFood index={index} item={item} type={props.item.type} />
+            <SingleFood index={index} item={item} type={props.item.type} key = {index}/>
           </div>
         ))}
       </div>

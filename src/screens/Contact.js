@@ -31,6 +31,7 @@ export default function Contact() {
       })
       .catch(err => {
         console.log(err);
+        alert('Lỗi phản hồi huhu!');
       });
   };
   const style_validate = {

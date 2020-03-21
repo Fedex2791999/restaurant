@@ -12,7 +12,6 @@ export default function DeliciousArea() {
   // console.log(listHotPot);
   // console.log(listGrill);
 
-  
   const listMenu = [
     {
       name: 'Lẩu',
@@ -64,19 +63,26 @@ export default function DeliciousArea() {
   ];
 
   useEffect(() => {
-    axios.get(' /hotpot').then(res => {
-      const data = res.data;
-      setListHotPot(data);
-    });
     axios
-      .get(' /grill')
+      .get('/hotpot')
+      .then(res => {
+        const data = res.data;
+        setListHotPot(data);
+      })
+      .catch(err => {
+        console.log('Lỗi');
+        console.log(err);
+      });
+
+    axios
+      .get('/grill')
       .then(res => {
         const data = res.data;
         setListGrill(data);
       })
       .catch(err => console.log('Hỏng rồi'));
     axios
-      .get(' /dessert')
+      .get('/dessert')
       .then(res => {
         const data = res.data;
         setListDessert(data);

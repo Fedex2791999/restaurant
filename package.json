@@ -29,7 +29,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:5000",
+  "proxy": "https://restaurant-backend-99.herokuapp.com",
   "eslintConfig": {
     "extends": "wesbos"
   },

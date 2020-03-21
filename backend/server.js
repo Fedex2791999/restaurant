@@ -81,23 +81,23 @@ app.post('/booking', (req, res) => {
   console.log(req.body);
   const { phone, date, time, people, name, number_table } = req.body;
 
-  // const sms =
-  //   '\n==ĐẶT BÀN==\n\n' +
-  //   'Tôi tên là: ' +
-  //   name +
-  //   '\nSĐT: ' +
-  //   phone +
-  //   '\nĐã đặt bàn vào ngày: ' +
-  //   date +
-  //   '\nVào lúc: ' +
-  //   time +
-  //   ' h' +
-  //   '\nBàn số: ' +
-  //   table +
-  //   '\nSố lượng người: ' +
-  //   people +
-  //   '\n\n====TRÂN TRỌNG====';
-  // console.log(sms);
+  const sms =
+    '\n==ĐẶT BÀN==\n\n' +
+    'Tôi tên là: ' +
+    name +
+    '\nSĐT: ' +
+    phone +
+    '\nĐã đặt bàn vào ngày: ' +
+    date +
+    '\nVào lúc: ' +
+    time +
+    ' h' +
+    '\nBàn số: ' +
+    number_table +
+    '\nSố lượng người: ' +
+    people +
+    '\n\n====TRÂN TRỌNG====';
+  console.log(sms);
 
   // insert into database
   let sql = `INSERT INTO booking(name, phone, date,  time, people, number_table)  VALUES (?, ? , ?, ?, ?, ?)`;
@@ -111,14 +111,14 @@ app.post('/booking', (req, res) => {
 
   // send message to my phone
 
-  // client.messages
-  //   .create({
-  //     body: sms,
-  //     from: '+12028049954',
-  //     to: '+84973405092'
-  //   })
-  //   .then(message => console.log(message.sid));
-  // res.end('Đã gửi tin nhắn');
+  client.messages
+    .create({
+      body: sms,
+      from: '+12028049954',
+      to: '+84973405092'
+    })
+    .then(message => console.log(message.sid));
+  res.end('Đã gửi tin nhắn');
 });
 app.post('/check_feedback',(req, res) =>{
   let sql = 'SELECT* FROM `feedback` ';
