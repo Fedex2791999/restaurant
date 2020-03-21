@@ -7,6 +7,8 @@ export default function Feedback() {
   useEffect(() => {
     axios.get('/feedback').then(res => {
       const data = res.data;
+      console.log("test");
+      
       setListFeedback(data);
     });
   }, []);
