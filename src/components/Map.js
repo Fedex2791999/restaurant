@@ -17,7 +17,7 @@ export default class Map extends Component {
           zoom={7}
           center={{
             lat: -3.745,
-            lng: -38.523
+            lng: -38.52
           }}
         />
       </LoadScript>
