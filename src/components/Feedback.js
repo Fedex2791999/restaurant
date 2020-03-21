@@ -8,7 +8,7 @@ export default function Feedback() {
     axios.get('/feedback').then(res => {
       const data = res.data;
       console.log("test");
-      
+      console.log("test2");
       setListFeedback(data);
     });
   }, []);
