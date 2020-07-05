@@ -1,4 +1,6 @@
 # Restaurant
+<br/>
+
 Website bán hàng dành riêng cho nhà hàng Lẩu nướng Quang Luyến, thông qua website người dùng có thể xem món ăn, đánh giá, đặt bàn ...
 
 # Giới thiệu một số hình ảnh của website
@@ -25,10 +27,14 @@ Website bán hàng dành riêng cho nhà hàng Lẩu nướng Quang Luyến, th�
 <br/>
 
 Giao diện đặt bàn
+<br/>
+
 
 <img src="https://i.ibb.co/LpsdNsZ/booking.png" >
 
 Sau khi đặt bàn thành công sẽ có tin nhắn gửi tới nhà hàng
+<br/>
+
 
 <img src="https://i.ibb.co/W362Zx0/mes.png" width = "250">
 
@@ -37,6 +43,7 @@ Sau khi đặt bàn thành công sẽ có tin nhắn gửi tới nhà hàng
 <br/>
 
 Giao diện phản hồi
+<br/>
 
 
 <img src="https://i.ibb.co/d7HdZNT/feedback.png" >
