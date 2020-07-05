@@ -32,7 +32,11 @@ Giao diện đặt bàn
 
 <img src="https://i.ibb.co/LpsdNsZ/booking.png" >
 
+<br/>
+
 Sau khi đặt bàn thành công sẽ có tin nhắn gửi tới nhà hàng
+<br/>
+
 <br/>
 
 
